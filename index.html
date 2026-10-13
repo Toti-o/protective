@@ -42,8 +42,9 @@
   .nav-links a { font-family: var(--font-data); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-ash); transition: var(--transition-crisp); }
   .nav-links a:hover, .nav-links a.active { color: var(--brass); }
   .social-icons { display: flex; gap: 15px; margin-left: 20px; }
-  .social-icons a { color: var(--text-ash); transition: var(--transition-crisp); }
-  .social-icons a:hover { color: var(--brass); }
+  /* FIX: Changed social icon color to gold by default */
+  .social-icons a { color: var(--brass); transition: var(--transition-crisp); }
+  .social-icons a:hover { color: var(--brass-glow); }
   .social-icons svg { width: 18px; height: 18px; fill: currentColor; }
   
   .hero { height: 100vh; min-height: 800px; display: flex; align-items: center; position: relative; background: linear-gradient(90deg, var(--bg-void) 30%, transparent 100%), url('officer1.jpg') center 20%/cover no-repeat; background-attachment: fixed; }
@@ -67,7 +68,8 @@
   .brief-num { font-family: var(--font-data); color: var(--brass); font-size: 0.8rem; margin-top: 4px; }
   .brief-list h4 { font-family: var(--font-command); font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
   .brief-list p { color: var(--text-ash); font-size: 0.9rem; margin-bottom: 0; }
-  .brief-image { height: 600px; background: url('team.jpg') center/cover no-repeat; border: 1px solid var(--border-tactical); position: relative; }
+  /* FIX: Changed center/cover to center top/cover */
+  .brief-image { height: 600px; background: url('team.jpg') center top/cover no-repeat; border: 1px solid var(--border-tactical); position: relative; }
   .brief-image::after { content: 'LIVE FEED // ENCRYPTED'; position: absolute; bottom: 20px; left: 20px; font-family: var(--font-data); font-size: 0.6rem; color: var(--brass); letter-spacing: 2px; background: rgba(5,5,5,0.8); padding: 6px 12px; }
   
   .capabilities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2px; background: var(--border-tactical); }
@@ -88,8 +90,9 @@
   .footer-col ul li a { color: var(--text-ash); font-size: 0.9rem; font-family: var(--font-body); transition: var(--transition-crisp); }
   .footer-col ul li a:hover { color: var(--brass); padding-left: 6px; }
   .footer-social { display: flex; gap: 15px; margin-top: 20px; }
-  .footer-social a { color: var(--text-ash); transition: var(--transition-crisp); }
-  .footer-social a:hover { color: var(--brass); }
+  /* FIX: Changed footer social icon color to gold by default */
+  .footer-social a { color: var(--brass); transition: var(--transition-crisp); }
+  .footer-social a:hover { color: var(--brass-glow); }
   .footer-social svg { width: 20px; height: 20px; fill: currentColor; }
   .footer-bottom { border-top: 1px solid var(--border-tactical); padding-top: 30px; display: flex; justify-content: space-between; font-family: var(--font-data); font-size: 0.65rem; color: var(--text-classified); letter-spacing: 2px; text-transform: uppercase; flex-wrap: wrap; gap: 20px; }
   
