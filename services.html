@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capabilities | Royal Guard Protective Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-void: #050505; --bg-panel: #0c0f12; --bg-panel-light: #141a20; --brass: #b38b4b; --brass-glow: #d4a85c; --steel: #2a333d; --text-bone: #e8e6e3; --text-ash: #7a8694; --text-classified: #4a5568; --border-tactical: #1f272e; --font-command: 'Cinzel', serif; --font-data: 'Share Tech Mono', monospace; --font-body: 'Rajdhani', sans-serif; --transition-crisp: all 0.3s cubic-bezier(0.19, 1, 0.22, 1); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--bg-void); color: var(--text-bone); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; cursor: crosshair; }
+  a, button, input, select, textarea { cursor: crosshair; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  .grid-overlay { position: fixed; inset: 0; pointer-events: none; z-index: 1; background-image: linear-gradient(rgba(179, 139, 75, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(179, 139, 75, 0.03) 1px, transparent 1px); background-size: 50px 50px; }
+  .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+  .section-pad { padding: 140px 0; }
+  .section-label { font-family: var(--font-data); font-size: 0.75rem; color: var(--brass); letter-spacing: 5px; text-transform: uppercase; margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+  .section-label::before { content: ''; display: block; width: 40px; height: 1px; background: var(--brass); }
+  .section-title { font-family: var(--font-command); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; letter-spacing: 1px; text-transform: uppercase; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 18px 40px; font-family: var(--font-data); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; border: 1px solid var(--brass); background: transparent; color: var(--brass); transition: var(--transition-crisp); position: relative; overflow: hidden; }
+  .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--brass); transition: var(--transition-crisp); z-index: -1; }
+  .btn:hover::before { left: 0; }
+  .btn:hover { color: var(--bg-void); }
+  .btn-solid { background: var(--brass); color: var(--bg-void); }
+  .btn-solid::before { background: var(--brass-glow); }
+  .btn-solid:hover { color: var(--bg-void); }
+  header { position: fixed; top: 0; left: 0; width: 100%; padding: 30px 0; z-index: 1000; transition: var(--transition-crisp); border-bottom: 1px solid transparent; }
+  header.scrolled { background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(10px); padding: 20px 0; border-bottom: 1px solid var(--border-tactical); }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-family: var(--font-command); font-size: 1.4rem; font-weight: 900; letter-spacing: 2px; line-height: 1; display: flex; flex-direction: column; align-items: flex-start; }
+  .logo img { height: 40px; margin-bottom: 5px; }
+  .logo span { display: block; font-family: var(--font-data); font-size: 0.6rem; color: var(--brass); letter-spacing: 4px; margin-top: 6px; font-weight: 400; }
+  .nav-links { display: flex; gap: 40px; align-items: center; }
+  .nav-links a { font-family: var(--font-data); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-ash); transition: var(--transition-crisp); }
+  .nav-links a:hover, .nav-links a.active { color: var(--brass); }
+  .social-icons { display: flex; gap: 15px; margin-left: 20px; }
+  .social-icons a { color: var(--text-ash); transition: var(--transition-crisp); }
+  .social-icons a:hover { color: var(--brass); }
+  .social-icons svg { width: 18px; height: 18px; fill: currentColor; }
+  footer { background: #020202; border-top: 1px solid var(--border-tactical); padding: 80px 0 40px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+  .footer-brand p { color: var(--text-ash); margin-top: 20px; max-width: 300px; font-size: 0.9rem; }
+  .footer-col h4 { font-family: var(--font-data); font-size: 0.75rem; color: var(--brass); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px; }
+  .footer-col ul li { margin-bottom: 16px; }
+  .footer-col ul li a { color: var(--text-ash); font-size: 0.9rem; font-family: var(--font-body); transition: var(--transition-crisp); }
+  .footer-col ul li a:hover { color: var(--brass); padding-left: 6px; }
+  .footer-social { display: flex; gap: 15px; margin-top: 20px; }
+  .footer-social a { color: var(--text-ash); transition: var(--transition-crisp); }
+  .footer-social a:hover { color: var(--brass); }
+  .footer-social svg { width: 20px; height: 20px; fill: currentColor; }
+  .footer-bottom { border-top: 1px solid var(--border-tactical); padding-top: 30px; display: flex; justify-content: space-between; font-family: var(--font-data); font-size: 0.65rem; color: var(--text-classified); letter-spacing: 2px; text-transform: uppercase; flex-wrap: wrap; gap: 20px; }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 768px) { .nav-links { display: none; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+
+  /* Page Specific Styles */
+  .page-hero { padding: 200px 0 100px; background: linear-gradient(rgba(5,5,5,0.8), rgba(5,5,5,0.95)), url('officers-in-suit.jpg') center 20%/cover no-repeat; border-bottom: 1px solid var(--border-tactical); }
+  .page-hero h1 { font-family: var(--font-command); font-size: clamp(3rem, 6vw, 5rem); text-transform: uppercase; }
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-bottom: 80px; border-bottom: 1px solid var(--border-tactical); padding-bottom: 80px; }
+  .detail-grid:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .detail-text h2 { font-family: var(--font-command); font-size: 2rem; text-transform: uppercase; margin-bottom: 20px; color: var(--brass); }
+  .detail-text p { color: var(--text-ash); font-size: 1.05rem; margin-bottom: 20px; }
+  .detail-list li { font-family: var(--font-data); font-size: 0.8rem; color: var(--text-ash); margin-bottom: 12px; display: flex; gap: 12px; }
+  .detail-list li::before { content: '■'; color: var(--brass); font-size: 0.5rem; margin-top: 6px; }
+  .detail-image { height: 400px; background: url('officer1.jpg') center/cover no-repeat; border: 1px solid var(--border-tactical); }
+  @media (max-width: 768px) { .detail-grid { grid-template-columns: 1fr; } .detail-image { height: 300px; } }
+</style>
+</head>
+<body>
+
+  <div class="grid-overlay"></div>
+
+  <header id="header">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img src="protectivelogo.png" alt="Royal Guard Logo">
+        ROYAL GUARD
+        <span>PROTECTIVE SERVICES</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Capabilities</a>
+        <a href="about.html">Operational Brief</a>
+        <a href="contact.html">Secure Contact</a>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/royalguardprotectiveservices" target="_blank"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="https://web.facebook.com/RoyalGuardProtectiveServices" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label reveal">Capabilities Dossier</div>
+      <h1 class="reveal">DEPLOYMENT OPTIONS</h1>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      
+      <div class="detail-grid reveal">
+        <div class="detail-text">
+          <h2>Personal Protection Officer (PPO)</h2>
+          <p>Discreet and professional protective services for individuals, executives, and public figures requiring close-quarters security.</p>
+          <ul class="detail-list">
+            <li>Close-quarters protection</li>
+            <li>Threat assessment & route planning</li>
+            <li>Residential & travel security</li>
+          </ul>
+        </div>
+        <div class="detail-image"></div>
+      </div>
+
+      <div class="detail-grid reveal">
+        <div class="detail-text">
+          <h2>VIP & Bodyguard Services</h2>
+          <p>Close protection for high-profile clients, ensuring safety without compromising privacy or daily routine.</p>
+          <ul class="detail-list">
+            <li>Discreet, low-profile presence</li>
+            <li>Event & venue coordination</li>
+            <li>Secure transportation</li>
+          </ul>
+        </div>
+        <div class="detail-image" style="background-image: url('officer2.jpg');"></div>
+      </div>
+
+      <div class="detail-grid reveal">
+        <div class="detail-text">
+          <h2>Executive Protection</h2>
+          <p>Advanced security details for corporate executives and business leaders navigating complex environments.</p>
+          <ul class="detail-list">
+            <li>Corporate campus security</li>
+            <li>Board meeting & conference protection</li>
+            <li>International travel security</li>
+          </ul>
+        </div>
+        <div class="detail-image" style="background-image: url('two-standing-officers.jpg');"></div>
+      </div>
+
+      <div class="detail-grid reveal">
+        <div class="detail-text">
+          <h2>Event Security</h2>
+          <p>Comprehensive security management for private events, corporate functions, and high-profile conferences.</p>
+          <ul class="detail-list">
+            <li>Access control & screening</li>
+            <li>Crowd management</li>
+            <li>Emergency response planning</li>
+          </ul>
+        </div>
+        <div class="detail-image" style="background-image: url('officer1.jpg');"></div>
+      </div>
+
+      <div class="detail-grid reveal">
+        <div class="detail-text">
+          <h2>Crowd Control & Access</h2>
+          <p>Managing access points and ensuring safety and order at large gatherings and venues.</p>
+          <ul class="detail-list">
+            <li>Perimeter security</li>
+            <li>ID verification & bag checks</li>
+            <li>Conflict de-escalation</li>
+          </ul>
+        </div>
+        <div class="detail-image" style="background-image: url('walking-officer.jpg');"></div>
+      </div>
+
+      <div class="detail-grid reveal">
+        <div class="detail-text">
+          <h2>Consultation & Planning</h2>
+          <p>Tailored security assessments and strategic planning to identify vulnerabilities before they are exploited.</p>
+          <ul class="detail-list">
+            <li>Security vulnerability assessments</li>
+            <li>Emergency action plan development</li>
+            <li>Security training for staff</li>
+          </ul>
+        </div>
+        <div class="detail-image" style="background-image: url('team.jpg');"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="margin-bottom: 20px;">ROYAL GUARD<span>PROTECTIVE SERVICES</span></div>
+          <p>Providing professional, reliable, and trustworthy protective services throughout Houston, TX and surrounding areas.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/royalguardprotectiveservices" target="_blank"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+            <a href="https://web.facebook.com/RoyalGuardProtectiveServices" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Directives</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Capabilities</a></li><li><a href="about.html">Operational Brief</a></li><li><a href="contact.html">Secure Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Comms</h4><ul><li><a href="tel:+19035231143">1-903-523-1143</a></li><li><a href="mailto:ROYALGUARDPS@GMAIL.COM">ROYALGUARDPS@GMAIL.COM</a></li><li>Houston, TX</li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 ROYAL GUARD PROTECTIVE SERVICES</p><p>DPS LIC B31226001 // EYES ONLY</p></div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+      }, { threshold: 0.15 });
+      revealElements.forEach(el => revealObserver.observe(el));
+    });
+  </script>
+</body>
+</html>
