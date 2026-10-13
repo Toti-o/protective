@@ -40,7 +40,7 @@
   .social-icons { display: flex; gap: 15px; margin-left: 20px; }
   .social-icons a { color: var(--brass); transition: var(--transition-crisp); }
   .social-icons a:hover { color: var(--brass-glow); }
-  .social-icons svg { width: 18px; height: 18px; fill: currentColor; }
+  .social-icons svg { width: 18px; height: 18px; }
   footer { background: #020202; border-top: 1px solid var(--border-tactical); padding: 80px 0 40px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
   .footer-brand p { color: var(--text-ash); margin-top: 20px; max-width: 300px; font-size: 0.9rem; }
@@ -51,7 +51,7 @@
   .footer-social { display: flex; gap: 15px; margin-top: 20px; }
   .footer-social a { color: var(--brass); transition: var(--transition-crisp); }
   .footer-social a:hover { color: var(--brass-glow); }
-  .footer-social svg { width: 20px; height: 20px; fill: currentColor; }
+  .footer-social svg { width: 20px; height: 20px; }
   .footer-bottom { border-top: 1px solid var(--border-tactical); padding-top: 30px; display: flex; justify-content: space-between; font-family: var(--font-data); font-size: 0.65rem; color: var(--text-classified); letter-spacing: 2px; text-transform: uppercase; flex-wrap: wrap; gap: 20px; }
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -60,13 +60,11 @@
   @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 768px) { .nav-links { display: none; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
 
-  /* Page Specific Styles */
   .page-hero { padding: 200px 0 100px; background: linear-gradient(rgba(5,5,5,0.8), rgba(5,5,5,0.95)), url('team.jpg') center 20%/cover no-repeat; border-bottom: 1px solid var(--border-tactical); }
   .page-hero h1 { font-family: var(--font-command); font-size: clamp(3rem, 6vw, 5rem); text-transform: uppercase; }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 100px; }
   .about-text h2 { font-family: var(--font-command); font-size: 2.5rem; text-transform: uppercase; margin-bottom: 30px; color: var(--brass); }
   .about-text p { color: var(--text-ash); font-size: 1.05rem; margin-bottom: 20px; }
-  /* FIX APPLIED HERE: Changed center/cover to center top/cover */
   .about-image { height: 500px; background: url('officer1.jpg') center top/cover no-repeat; border: 1px solid var(--border-tactical); }
   .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border-tactical); }
   .value-card { background: var(--bg-panel); padding: 40px; text-align: center; }
@@ -92,8 +90,8 @@
         <a href="about.html" class="active">Operational Brief</a>
         <a href="contact.html">Secure Contact</a>
         <div class="social-icons">
-          <a href="https://www.instagram.com/royalguardprotectiveservices" target="_blank"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
-          <a href="https://web.facebook.com/RoyalGuardProtectiveServices" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/royalguardprotectiveservices" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="https://web.facebook.com/RoyalGuardProtectiveServices" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
         </div>
       </nav>
     </div>
@@ -147,8 +145,8 @@
           <div class="logo" style="margin-bottom: 20px;">ROYAL GUARD<span>PROTECTIVE SERVICES</span></div>
           <p>Providing professional, reliable, and trustworthy protective services throughout Houston, TX and surrounding areas.</p>
           <div class="footer-social">
-            <a href="https://www.instagram.com/royalguardprotectiveservices" target="_blank"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
-            <a href="https://web.facebook.com/RoyalGuardProtectiveServices" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.instagram.com/royalguardprotectiveservices" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="https://web.facebook.com/RoyalGuardProtectiveServices" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
           </div>
         </div>
         <div class="footer-col"><h4>Directives</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Capabilities</a></li><li><a href="about.html">Operational Brief</a></li><li><a href="contact.html">Secure Contact</a></li></ul></div>
