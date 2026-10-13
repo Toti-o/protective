@@ -38,8 +38,8 @@
   .nav-links a { font-family: var(--font-data); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-ash); transition: var(--transition-crisp); }
   .nav-links a:hover, .nav-links a.active { color: var(--brass); }
   .social-icons { display: flex; gap: 15px; margin-left: 20px; }
-  .social-icons a { color: var(--text-ash); transition: var(--transition-crisp); }
-  .social-icons a:hover { color: var(--brass); }
+  .social-icons a { color: var(--brass); transition: var(--transition-crisp); }
+  .social-icons a:hover { color: var(--brass-glow); }
   .social-icons svg { width: 18px; height: 18px; fill: currentColor; }
   footer { background: #020202; border-top: 1px solid var(--border-tactical); padding: 80px 0 40px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
@@ -49,8 +49,8 @@
   .footer-col ul li a { color: var(--text-ash); font-size: 0.9rem; font-family: var(--font-body); transition: var(--transition-crisp); }
   .footer-col ul li a:hover { color: var(--brass); padding-left: 6px; }
   .footer-social { display: flex; gap: 15px; margin-top: 20px; }
-  .footer-social a { color: var(--text-ash); transition: var(--transition-crisp); }
-  .footer-social a:hover { color: var(--brass); }
+  .footer-social a { color: var(--brass); transition: var(--transition-crisp); }
+  .footer-social a:hover { color: var(--brass-glow); }
   .footer-social svg { width: 20px; height: 20px; fill: currentColor; }
   .footer-bottom { border-top: 1px solid var(--border-tactical); padding-top: 30px; display: flex; justify-content: space-between; font-family: var(--font-data); font-size: 0.65rem; color: var(--text-classified); letter-spacing: 2px; text-transform: uppercase; flex-wrap: wrap; gap: 20px; }
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1); }
@@ -61,11 +61,8 @@
   @media (max-width: 768px) { .nav-links { display: none; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
 
   /* Page Specific Styles */
-  /* FIX 1: Changed background position to 'center 20%' to keep heads in frame */
   .page-hero { padding: 200px 0 100px; background: linear-gradient(rgba(5,5,5,0.8), rgba(5,5,5,0.95)), url('two-standing-officers.jpg') center 20%/cover no-repeat; border-bottom: 1px solid var(--border-tactical); }
   .page-hero h1 { font-family: var(--font-command); font-size: clamp(3rem, 6vw, 5rem); text-transform: uppercase; }
-  
-  /* FIX 2: Restructured contact layout for a bigger map */
   .contact-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; margin-bottom: 80px; }
   .contact-info h3 { font-family: var(--font-command); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 20px; color: var(--brass); }
   .contact-info p { color: var(--text-ash); margin-bottom: 40px; }
@@ -194,7 +191,6 @@
     </div>
   </section>
 
-  <!-- NEW FULL-WIDTH MAP SECTION -->
   <section class="map-section reveal">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d443090.54026185844!2d-95.67751759999999!3d29.817178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20TX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
   </section>
